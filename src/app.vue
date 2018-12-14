@@ -1,7 +1,11 @@
 <template>
     <div class="app-container">
         <!-- 头部分，PHP32期vue-app -->
-        <mt-header fixed title="猪头"></mt-header>
+        <mt-header fixed title="猪头">
+            <div to="#" slot="left" @click="back">
+            <mt-button icon="back">返回</mt-button>
+            </div>
+        </mt-header>
 
         <!-- 主体部分，内容 -->
         <!-- <span>主体</span> -->
@@ -31,8 +35,22 @@
 </template>
 
 <script>
-    export default {
 
+    export default {
+        methods:{
+            back(){
+                var Thisurl = window.location.href;
+                console.log(Thisurl);
+                if(Thisurl == 'http://localhost:2333/#/home' || Thisurl == 'http://localhost:2333/' || Thisurl == 'http://localhost:2333/home'){
+                    console.log('首页');
+
+                }else{
+                    console.log('其他页');
+                    history.back();
+                }
+                
+            }
+        }
     }
 </script>
 
@@ -41,6 +59,5 @@
         padding-top: 40px;
         padding-bottom: 50px;
     }
-
     ;
 </style>

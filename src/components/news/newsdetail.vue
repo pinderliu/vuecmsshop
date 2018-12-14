@@ -9,7 +9,7 @@
         <div class="content" v-html="newsInfo.content">
         </div>
         <!-- 评论 -->
-        <div class="comment">
+        <!-- <div class="comment">
             <h2 class="title">发表评论</h2>
             <textarea cols="30" rows="10" placeholder="请输入" v-model="content"></textarea>
             <mt-button type="primary" size="large" @click="postComment">评论</mt-button>
@@ -27,11 +27,13 @@
             
             <mt-button plain type="primary" size="large" @click="loadMore">加载更多</mt-button>
 
-        </div>
+        </div> -->
+        <!-- 引入评论子组件 -->
     </div>
 </template>
 
 <script>
+import comment from '../common/comment.vue'
 import { Toast } from 'mint-ui';
     export default {
         data() {
@@ -89,6 +91,9 @@ import { Toast } from 'mint-ui';
                 //调用getcomment获取最新的评论
                 this.getComments();
             }
+        },
+        components:{
+            comment
         }
     }
 </script>
@@ -112,29 +117,29 @@ import { Toast } from 'mint-ui';
         float:right;
       }
     }
-    .comment{
-        .title{
-            color: black;
-            font-size: 18px;
-            text-align: left;
-        }
-        textarea{
-            line-height:10px;
-        }
-    }
-    .list{
-        padding-bottom: 5px;
-        .list-item{
-            font-size: 14px;
-            .user{
-                background-color: #ccc;
-            }
-            .content{
-                line-height: 25px;
-                padding-left: 10px;
-                // height: 30px;
-            }
-        }
-    }
+    // .comment{
+    //     .title{
+    //         color: black;
+    //         font-size: 18px;
+    //         text-align: left;
+    //     }
+    //     textarea{
+    //         line-height:10px;
+    //     }
+    // }
+    // .list{
+    //     padding-bottom: 5px;
+    //     .list-item{
+    //         font-size: 14px;
+    //         .user{
+    //             background-color: #ccc;
+    //         }
+    //         .content{
+    //             line-height: 25px;
+    //             padding-left: 10px;
+    //             // height: 30px;
+    //         }
+    //     }
+    // }
   }
 </style>

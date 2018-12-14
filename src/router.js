@@ -12,7 +12,8 @@ import newslist from './components/news/newslist.vue';
 import newsdetail from './components/news/newsdetail.vue';
 import photolist from './components/photo/photolist.vue';
 import photodetail from './components/photo/photodetail.vue';
-// import photodetail from './components/photo/photodetail.vue';
+import goodslist from './components/goods/goodslist.vue';
+
 
 
 //定义路由匹配
@@ -49,11 +50,15 @@ var router = new VueRouter({
             path:"/home/photolist",
             component:photolist
         },
-        // {
-        //     path:"/home/photodetail",
-        //     component:photodetail
-        // },
-        {path:"/home/photodetail/:id",component:photodetail},
+        {
+            path:"/home/photodetail/:id",
+            component:photodetail
+        },
+        {
+            path:"/home/goodslist",
+            component:goodslist
+        },
+        
     ],
     //修改路由匹配到的默认类
     'linkActiveClass': 'mui-active',

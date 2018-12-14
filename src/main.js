@@ -98,6 +98,12 @@ Vue.component(Button.name, Button);
 import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css';
 
+//引入图片预览插件
+import VuePreview from 'vue-preview'
+// 安装到vue身上去
+Vue.use(VuePreview);
+
+
 //引入app根组件
 import app from './app.vue';
 
